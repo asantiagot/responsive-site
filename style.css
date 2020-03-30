@@ -62,9 +62,9 @@ nav {
 .intro-text h1 {
 	font-size: 44px;
 	font-weight: 400;
-	background: linear-gradient(to right, #F9F964, #6F6F89);
+	/* background: linear-gradient(to right, #F9F964, #6F6F89);
 	-webkit-background-clip: text;
-	-webkit-text-fill-color: transparent;
+	-webkit-text-fill-color: transparent; */
 }
 
 .intro-text p {
@@ -76,14 +76,6 @@ nav {
 .cta {
 	padding: 50px 0px 0px 0px;
 }
-
-/* .cta-select, .cta-add {
-	width: 150px;
-	height: 50px;
-	cursor: pointer;
-	font-size: 15px;
-	display: flex;
-} */
 
 .cta-select {
 	border: 2px solid #C36CBB;
@@ -108,11 +100,15 @@ nav {
 
 .cover {
 	flex: 1;
+	display: flex;
+	justify-content: center;
+	height: 60vh;
 }
 
 .cover img {
-	height: 60vh;
+	height: 100%;
 	filter: drop-shadow(0px 5px 3px gray);
+	animation: drop 1.5s ease;
 }
 
 .big-circle {
@@ -139,4 +135,69 @@ nav {
 	left: 20%;
 	z-index: -1;
 	opacity: 0.5
+}
+
+.laptop-select {
+	width: 15%;
+	display:flex;
+	justify-content: space-around;
+	position: absolute;
+	right: 20%;
+}
+
+@keyframes drop {
+	0% {
+		opacity: 0;
+		transform: translateY(-80px);
+	}
+
+	100% {
+		opacity: 1;
+		transform: translateY(0px);
+	}
+}
+
+@media screen and (max-width: 1024px) {
+	.presentation {
+		flex-direction: column;
+	}
+
+	.introduction {
+		margin-top: 5vh;
+		text-align: center;
+	}
+
+	.intro-text h1 {
+		font-size: 30px;
+	}
+
+	.intro-text p {
+		font-size: 18px;
+	}
+
+	.cta {
+		padding: 10px 0px 0px 0px;
+	}
+
+	.laptop-select {
+		bottom: 5%;
+		right: 50%;
+		width: 50%;
+		transform: translate(50%, 5%);
+	}
+
+	.cover img {
+		height: 80%;
+	}
+
+	.small-circle, .medium-circle, .big-circle {
+		opacity: 0.1;
+	}
+}
+
+@media screen and (max-width: 400px) {
+	header {
+		width: 90%;
+		font-size: 2vh;
+	}
 }
